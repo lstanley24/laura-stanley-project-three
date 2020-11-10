@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which Dolly Are You?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Rye&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ce85cdd91a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/sass/style.css">
+</head>
+<body>
+    <!-- for screen readers -->
+    <a href="#question-1" class="skip-link">Skip to the first question.</a>
+    <header>
+        <div class="wrapper">
+            <h1 class="greeting">Howdy, y'all!<i class="fas fa-hat-cowboy"></i></h1>
+            
+            <h2>Complete the quiz below to find out which era of Dolly Parton you are!</h2>
+
+            <div class="nav-button-container">
+                <a href="#question-1">Yee-haw!</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="question-1"> 
+            <div class="wrapper">
+                <form action="">
+                    <div class="question-wrapper">
+                        <h3>Your style could be described as:</h3>
+                        <div class="choice-container">
+                            <div class="button-1">
+                                <input type="radio" id="plain" name="fashion" value="one-point" required>
+                                <label for="plain"><span class="button">Plain and simple</span>
+                            </div>
+                            <div class="button-2">
+                                <input type="radio" id="sequins" name="fashion" value="three-point">
+                                <label for="sequins"><span class="button">The more sequins the better!</span>
+                            </div>
+
+                            <div class="button-3">
+                                <input type="radio" id="denim" name="fashion" value="two-point"> 
+                                <label for="denim"><span class="button">Denim-heavy</span>
+                            </div>
+                        <!-- DOUBLE CHECK LABEL STRUCTURE -->
+                        </div>
+                    </div>
+                </form>
+                <div class="nav-button-container">
+
+                    <a href="#question-2">Next!</a>
+
+                </div>
+            </div>
+        </section>
+        <section id="question-2">
+            <div class="wrapper">
+
+                <form action="">
+
+                    <div class="question-wrapper">
+
+                        <h3>Choose a genre of music:</h3>
+
+                        <div class="choice-container">
+
+                            <div class="button-1">
+                                <input type="radio" id="country" name="genre" value="two-point" required>
+                                <label for="country"><span class="button">Country, duh</span>
+                            </div>
+                            <div class="button-2">
+                                <input type="radio" id="pop" name="genre" value="three-point">
+                                <label for="pop"><span class="button">Pop</span>
+                            </div>
+                            <div class="button-3">
+                                <input type="radio" id="bluegrass" name="genre" value="one-point">
+                                <label for="bluegrass"><span class="button">Bluegrass</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </form>
+                <div class="nav-button-container">
+                
+                    <a href="#question-3">Next!</a>
+                
+                </div>
+            </div>
+        </section>
+        <section id="question-3">
+            <div class="wrapper">
+                <form action="">
+                    <div class="question-wrapper">
+
+                        <h3>Choose a movie:</h3>
+
+                        <div class="choice-container">
+
+                            <div class="button-1">
+                                <input type="radio" id="nine-five" name="movie" value="two-point" required>
+                                <label for="nine-five"><span class="button">Nine to Five</span>
+                            </div>
+                            <div class="button-2">
+                                <input type="radio" id="steel-magnolias" name="movie" value="three-point">
+                                <label for="steel-magnolias"><span class="button">Steel Magnolias</span>
+                            </div>
+                            <div class="button-3">
+
+                                <input type="radio" id="coat-colors" name="movie" value="one-point">
+                                <label for="coat-colors"><span class="button">Dolly Parton's Coat of Many Colors</span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="nav-button-container">
+    
+                    <a href="#question-4">Next!</a>
+                
+                </div>
+            </div>
+        </section> 
+        <section id="question-4">
+            <div class="wrapper">
+                <form action="">
+                        <div class="question-wrapper">
+
+                            <!-- This question is just for fun and has no valued meaning -->
+
+                            <h3>When it comes to your hair, your motto is:</h3>
+
+                            <div class="choice-container">
+
+                                <div class="button-1">
+
+                                    <input type="radio" id="high-hair" name="hair" value="high-hair" required>
+                                    
+                                    <label for="high-hair"><span class="button">"The higher the hair, the closer to God!"</span>
+
+                                </div>
+                                <div class="button-2">
+
+                                    <input type="radio" id="high-hair" name="hair" value="high-hair">
+
+                                    <label for="high-hair"><span class="button">"The higher the hair, the closer to God!"</span>
+
+                                </div>
+                                <div class="button-3">
+                                        
+                                    <input type="radio" id="high-hair" name="hair" value="high-hair">
+
+                                    <label for="high-hair"><span class="button">"The higher the hair, the closer to God!"</span>
+
+                                </div>
+                            </div>
+
+                            <div class="submit-container">
+                                <input type="submit" value="Results!">
+                                <label for="submit" class="sr-only">Click here for quiz results!</label>
+
+                            </div>
+                        </div>
+                 </form>
+            </div>        
+        </section>
+        <section class="results">
+            <div class="wrapper">
+
+                <div class="answer-container">
+
+                    <!-- content to be added dynamically -->
+
+                </div>
+            </div>
+        </section>
+        
+    </main>   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -288,6 +288,10 @@ figure {
   margin-right: 10px;
 }
 
+fieldset {
+  border: 0;
+}
+
 form .button {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
@@ -302,7 +306,7 @@ h3 {
 }
 
 .nav-button-container,
-[type="submit"] {
+[type=submit] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -317,7 +321,7 @@ h3 {
 }
 
 .nav-button-container a,
-[type="submit"] {
+[type=submit] {
   font-family: "Rye", cursive;
   font-weight: 700;
   font-size: 3rem;
@@ -329,8 +333,8 @@ h3 {
 
 .nav-button-container a:hover,
 .nav-button-container a:focus,
-[type="submit"]:hover,
-[type="submit"]:focus {
+[type=submit]:hover,
+[type=submit]:focus {
   background-color: #68417f;
   color: white;
 }

@@ -6,7 +6,7 @@
     <title>Which Dolly Are You?</title>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Rye&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ce85cdd91a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles/sass/style.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <!-- for screen readers -->
@@ -26,25 +26,28 @@
         <section id="question-1"> 
             <div class="wrapper">
                 <form action="">
-                    <div class="question-wrapper">
-                        <h3>Your style could be described as:</h3>
-                        <div class="choice-container">
-                            <div class="button-1">
-                                <input type="radio" id="plain" name="fashion" value="one-point" required>
-                                <label for="plain"><span class="button">Plain and simple</span>
-                            </div>
-                            <div class="button-2">
-                                <input type="radio" id="sequins" name="fashion" value="three-point">
-                                <label for="sequins"><span class="button">The more sequins the better!</span>
-                            </div>
+                    <fieldset>
+                        <!-- why does required only work for the last question?? -->
+                        <div class="question-wrapper">
+                            <h3>Your style could be described as:</h3>
+                            <div class="choice-container">
+                                <div class="button-1">
+                                    <input type="radio" id="plain" name="fashion" value= 1 required>
+                                    <label for="plain"><span class="button">Plain and simple</span></label>
+                                </div>
+                                <div class="button-2">
+                                    <input type="radio" id="sequins" name="fashion" value= 2>
+                                    <label for="sequins"><span class="button">The more sequins the better!</span></label>
+                                </div>
 
-                            <div class="button-3">
-                                <input type="radio" id="denim" name="fashion" value="two-point"> 
-                                <label for="denim"><span class="button">Denim-heavy</span>
+                                <div class="button-3">
+                                    <input type="radio" id="denim" name="fashion" value= 3> 
+                                    <label for="denim"><span class="button">Denim-heavy</span></label>
+                                </div>
+                            
                             </div>
-                        <!-- DOUBLE CHECK LABEL STRUCTURE -->
                         </div>
-                    </div>
+                    </fieldset>
                 </form>
                 <div class="nav-button-container">
 
@@ -57,29 +60,32 @@
             <div class="wrapper">
 
                 <form action="">
+                    <fieldset>
 
-                    <div class="question-wrapper">
+                        <div class="question-wrapper">
 
-                        <h3>Choose a genre of music:</h3>
+                            <h3>Choose a genre of music:</h3>
 
-                        <div class="choice-container">
+                            <div class="choice-container">
 
-                            <div class="button-1">
-                                <input type="radio" id="country" name="genre" value="two-point" required>
-                                <label for="country"><span class="button">Country, duh</span>
-                            </div>
-                            <div class="button-2">
-                                <input type="radio" id="pop" name="genre" value="three-point">
-                                <label for="pop"><span class="button">Pop</span>
-                            </div>
-                            <div class="button-3">
-                                <input type="radio" id="bluegrass" name="genre" value="one-point">
-                                <label for="bluegrass"><span class="button">Bluegrass</span>
+                                <div class="button-1">
+                                    <input type="radio" id="country" name="genre" value= 2 required>
+                                    <label for="country"><span class="button">Country, duh</span></label>
+                                </div>
+                                <div class="button-2">
+                                    <input type="radio" id="pop" name="genre" value= 3>
+                                    <label for="pop"><span class="button">Pop</span></label>
+                                </div>
+                                <div class="button-3">
+                                    <input type="radio" id="bluegrass" name="genre" value= 1>
+                                    <label for="bluegrass"><span class="button">Bluegrass</span></label>
+                                </div>
+
                             </div>
 
                         </div>
 
-                    </div>
+                    </fieldset>
                 </form>
                 <div class="nav-button-container">
                 
@@ -91,27 +97,33 @@
         <section id="question-3">
             <div class="wrapper">
                 <form action="">
-                    <div class="question-wrapper">
+                    <fieldset>
+                        <div class="question-wrapper">
 
-                        <h3>Choose a movie:</h3>
+                            <h3>Choose a movie:</h3>
 
-                        <div class="choice-container">
+                            <div class="choice-container">
 
-                            <div class="button-1">
-                                <input type="radio" id="nine-five" name="movie" value="two-point" required>
-                                <label for="nine-five"><span class="button">Nine to Five</span>
-                            </div>
-                            <div class="button-2">
-                                <input type="radio" id="steel-magnolias" name="movie" value="three-point">
-                                <label for="steel-magnolias"><span class="button">Steel Magnolias</span>
-                            </div>
-                            <div class="button-3">
+                                <div class="button-1">
+                                    <input type="radio" id="nine-five" name="movie" value= 2 required>
 
-                                <input type="radio" id="coat-colors" name="movie" value="one-point">
-                                <label for="coat-colors"><span class="button">Dolly Parton's Coat of Many Colors</span>
+                                    <label for="nine-five"><span class="button">Nine to Five</span></label>
+                                </div>
+                                <div class="button-2">
+                                    <input type="radio" id="steel-magnolias" name="movie" value= 3>
+
+                                    <label for="steel-magnolias"><span class="button">Steel Magnolias</span></label>
+
+                                </div>
+                                <div class="button-3">
+
+                                    <input type="radio" id="coat-colors" name="movie" value= 1>
+
+                                    <label for="coat-colors"><span class="button">Dolly Parton's Coat of Many Colors</span></label>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </fieldset>
                 </form>
                 <div class="nav-button-container">
     
@@ -123,6 +135,7 @@
         <section id="question-4">
             <div class="wrapper">
                 <form action="">
+                    <fieldset>
                         <div class="question-wrapper">
 
                             <!-- This question is just for fun and has no valued meaning -->
@@ -133,34 +146,37 @@
 
                                 <div class="button-1">
 
-                                    <input type="radio" id="high-hair" name="hair" value="high-hair" required>
+                                    <input type="radio" id="high-hair" name="hair">
                                     
-                                    <label for="high-hair"><span class="button">"The higher the hair, the closer to God!"</span>
+                                    <label for="high-hair"><span class="button">"The higher the hair, the closer to God!"</span></label>
 
                                 </div>
                                 <div class="button-2">
 
-                                    <input type="radio" id="high-hair" name="hair" value="high-hair">
+                                    <input type="radio" id="high-hair" name="hair">
 
-                                    <label for="high-hair"><span class="button">"The higher the hair, the closer to God!"</span>
+                                    <label for="high-hair"><span class="button">"The higher the hair, the closer to God!"</span></label>
 
                                 </div>
                                 <div class="button-3">
                                         
-                                    <input type="radio" id="high-hair" name="hair" value="high-hair">
+                                    <input type="radio" id="high-hair" name="hair">
 
-                                    <label for="high-hair"><span class="button">"The higher the hair, the closer to God!"</span>
+                                    <label for="high-hair"><span class="button">"The higher the hair, the closer to God!"</span></label>
 
                                 </div>
                             </div>
 
                             <div class="submit-container">
                                 <input type="submit" value="Results!">
+                                
                                 <label for="submit" class="sr-only">Click here for quiz results!</label>
 
                             </div>
                         </div>
-                 </form>
+                       
+                    </fieldset>     
+                </form>
             </div>        
         </section>
         <section class="results">

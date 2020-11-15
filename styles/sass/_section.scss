@@ -1,3 +1,6 @@
+
+// Each question is a new section. These are general styles for each section. 
+
 h3 {
     font-family:'Raleway', sans-serif;
     font-weight: 700;
@@ -31,15 +34,17 @@ form .button {
     justify-content: center;
 }
 
+// Styling background colour and height for specific questions (sections)
+
 #question-1, 
 #question-3 {
-    background-color: white;
+    background-color: $secondary-colour;
     height: 100vh;
 }
 
 #question-2,
 #question-4 {
-    background-color: #f2cfda;
+    background-color: $primary-colour;
     height: 100vh;
 }
 
@@ -49,7 +54,7 @@ form .button {
     margin: 10px 0 10px 0;
 }
 
-// results styles. This section is added dynamically
+// Results styles. The the content of this section is added dynamically
 
 .answer-container {
     display: flex;
@@ -73,7 +78,7 @@ form .button {
     width: 30%;
 }
 
-// button that allows users to reset quiz. It displays when the quiz results are revealed. 
+// Button that allows users to reset quiz. It displays when the quiz results are revealed. 
 
 .quiz-reset {
     margin: 50px 0 50px 0;
@@ -89,7 +94,7 @@ form .button {
 }
 
 
-//mobile styles 
+//Responsive styles 
 
 @media (max-width: 940px) {
     .image-container {
@@ -133,7 +138,6 @@ form .button {
 
     #question-4 .choice-container {
         width: 75%;
-        
     }
 
     [type=submit] {

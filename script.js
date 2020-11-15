@@ -1,7 +1,9 @@
 // Document ready !
+
 $(document).ready(function() {
     
     // Set up an event listener on the form's submit button which, once clicked (aka a submit event), it will set off a series of instructions. 
+
     $("form").on("submit", function (event) {
 
         // prevent default so the page doesn't reload automatically when the form is submitted 
@@ -14,11 +16,13 @@ $(document).ready(function() {
         const questionTwoSelection = $("input[name=genre]:checked").val();
         const questionThreeSelection = $("input[name=movie]:checked").val();
 
+        // Three empty arrays that will store the value of the question selections
+
         const sixtiesDolly = []
         const seventiesDolly = []
         const eightiesDolly = []
 
-        // Yo this is awesome! Took a quick look and right off the bat, a suggestion to clean it up would be to set up your If statement blocks as a function where you set the questionXSelection as a argument.And then you just have to call it three times, once for each answer!
+        // Conditional statements that push the assigned values into the designated Dolly arrays. This is repetitive, dear reader, but I wasn't too sure how to clean it up. Maybe make it into a function that I call three times? 
 
         if (questionOneSelection === "1") {
             sixtiesDolly.push(questionOneSelection)
@@ -27,6 +31,7 @@ $(document).ready(function() {
         } else if (questionOneSelection === "3") {
         eightiesDolly.push(questionOneSelection)
         } else {
+            // Alert is set off when a value is not selected
             alert("Don't forget to choose an answer for question 1!")
         }
 
@@ -52,9 +57,30 @@ $(document).ready(function() {
  
         //  Display the determined era of Dolly Parton on the page.
 
-        if (sixtiesDolly.length >= 2) {
+        if (questionOneSelection === undefined || questionTwoSelection === undefined || questionThreeSelection === undefined) {
+
+            // Error proofing. If no selections are made, the text and image containers with the answers are hidden and the errorDolly container arrives
+
+            $(".text-container").hide();
+            $(".image-container").hide();
+            $("a.reset").hide();
+
+            // Error Dolly container 
+
+            const errorDolly = ` 
+                <h3> Maybe try filling out all of the answers next time </h3>
+                <figure> 
+                    <img src = "./assets/dollyPartonError.gif" alt = "A GIF of Dolly Parton wearing a black turtleneck sweater and chunky silver bracelets, earrings, and a necklace. She takes a sip from a white tea cup, while holding its matching saucer, and winks at the camera."> 
+                </figure>
+            `;
+
+            $(".error-dolly").html(errorDolly)  
+
+            
+        } else if (sixtiesDolly.length >= 2) {
+            // 1960s Dolly answer
            
-           // displays the text within the stylized text container 
+           // Displays the text within the stylized text container 
 
             const sixtiesDollyResult = `
             <h3>You are 1960s Dolly Parton!</h3>
@@ -80,10 +106,11 @@ $(document).ready(function() {
 
             $(".image-container").html(sixtiesDollyResultImg);
 
-          
-
-        
+            
         } else if (seventiesDolly.length >= 2) {
+            // 1970s Dolly answer 
+
+            // Displays the text within the stylized text container 
 
             const seventiesDollyResult = `
             <h3>You are 1970s Dolly Parton!</h3>
@@ -94,8 +121,11 @@ $(document).ready(function() {
 
             $(".text-container").html(seventiesDollyResult)
 
+            // Reveals the quiz reset button that is otherwise hidden as per css "display:none"
 
             $('.quiz-reset').show();
+
+            // displays the image within the stylized image container
 
             const seventiesDollyResultImg = ` 
                 <figure> 
@@ -105,7 +135,12 @@ $(document).ready(function() {
 
             $(".image-container").html(seventiesDollyResultImg)
 
+            
         } else if (eightiesDolly.length >= 2 ){
+            //1980s Dolly answer
+
+            // Displays the text within the stylized text container 
+
             const eightiesDollyResult = `
             <h3>You are 1980s Dolly Parton!</h3>
             
@@ -114,7 +149,11 @@ $(document).ready(function() {
 
             $(".text-container").html(eightiesDollyResult)
 
+            // Reveals the quiz reset button that is otherwise hidden as per css "display:none"
+
             $('.quiz-reset').show();
+
+            // displays the image within the stylized image container
 
             const eightiesDollyResultImg = ` 
                 <figure> 
@@ -124,24 +163,11 @@ $(document).ready(function() {
 
             $(".image-container").html(eightiesDollyResultImg)
 
-            // Further error proofing. If no selections are made, the text and image containers with the answers are hidden and the errorDolly container arrives
-
-        } else if  (sixtiesDolly || seventiesDolly || eightiesDolly === undefined) {
-            $(".text-container").hide();
-            $(".image-container").hide();
-            $("a.reset").hide();
-
-            const errorDolly = ` 
-                <h3> Maybe try filling out all of the answers next time </h3>
-                <figure> 
-                    <img src = "./assets/dollyPartonError.gif" alt = "A GIF of Dolly Parton wearing a black turtleneck sweater and chunky silver bracelets, earrings, and a necklace. She takes a sip from a white tea cup, while holding its matching saucer, and winks at the camera."> 
-                </figure>
-            `;
-
-            $(".error-dolly").html(errorDolly)
-
         }  else {
 
+            // If the user selects "1" "2" and "3", the result is Present Day Dolly.    
+
+            // Displays the text within the stylized text container 
             const presentDollyResult = `
             <h3>You are present-day Dolly Parton!</h3>
             
@@ -149,6 +175,8 @@ $(document).ready(function() {
             `;
 
             $(".text-container").html(presentDollyResult)
+
+            // Reveals the quiz reset button that is otherwise hidden as per css "display:none"
 
             $(".quiz-reset").show();
 
@@ -158,8 +186,9 @@ $(document).ready(function() {
                 </figure>
             `;
 
-            $(".image-container").html(presentDollyResultImg)
-            
+            // displays the image within the stylized image container
+
+            $(".image-container").html(presentDollyResultImg)   
         }
 
         // scrolls users to the results container
@@ -179,12 +208,6 @@ $(document).ready(function() {
             $("#dolly-quiz-2").trigger("reset");
             $("#dolly-quiz-3").trigger("reset");
             $("#dolly-quiz-4").trigger("reset");
-
         });
-     
-
     });
-
 });
-
-

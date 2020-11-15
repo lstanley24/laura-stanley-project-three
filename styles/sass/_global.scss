@@ -1,3 +1,12 @@
+//Colours 
+
+$primary-colour: #f2cfda;
+$secondary-colour: #ffffff;
+$button-colour-primary: #219bc3;
+$button-colour-secondary: #68417f;
+$font-colour: #000000;
+
+// General styles
 
 * { 
     padding: 0;
@@ -28,13 +37,15 @@ figure {
     margin: 0;
 }
 
+// Accessible skip-link styles 
+
 .skip-link {
     position: absolute;
     left:-1000px;
     top:5px;
     z-index:999;
-    background-color: white;
-    color: black;
+    background-color: $secondary-colour;
+    color: $font-colour;
     font-family: 'Nova Flat', cursive;
 }
 
@@ -47,6 +58,8 @@ figure {
     width: 100%;
     margin: 0 auto;
 }
+
+// Button styles throughout quiz 
 
 .nav-button-container,
 [type=submit] {
@@ -66,7 +79,7 @@ figure {
     display: inline-block;
     border-radius: 5%;
     padding: 30px;
-    background-color: #219bc3;
+    background-color: $button-colour-primary;
 }
 
 .nav-button-container a:hover,
@@ -75,12 +88,11 @@ figure {
 [type=submit]:focus,
 .quiz-reset a:hover,
 .quiz-reset a:focus {
-    background-color: #68417f;
-    color: white;
+    background-color: $button-colour-secondary;
+    color: $secondary-colour;
 }
 
-
-
+// Responsive styles
 
 @media (max-width: 480px) {
 
@@ -88,5 +100,4 @@ figure {
         margin-top: 10px;
 
     }
-
 }

@@ -4,7 +4,7 @@ $(document).ready(function() {
     
     // Set up an event listener on the form's submit button which, once clicked (aka a submit event), it will set off a series of instructions. 
 
-    $("form").on("submit", function (event) {
+    $("form").on("submit", function(event) {
 
         // prevent default so the page doesn't reload automatically when the form is submitted 
 
@@ -29,7 +29,7 @@ $(document).ready(function() {
         } else if (questionOneSelection === "2") {
             seventiesDolly.push(questionOneSelection)
         } else if (questionOneSelection === "3") {
-        eightiesDolly.push(questionOneSelection)
+            eightiesDolly.push(questionOneSelection)
         } else {
             // Alert is set off when a value is not selected
             alert("Don't forget to choose an answer for question 1!")
@@ -83,10 +83,10 @@ $(document).ready(function() {
            // Displays the text within the stylized text container 
 
             const sixtiesDollyResult = `
-            <h3>You are 1960s Dolly Parton!</h3>
-            
-            <p>You are just finding your footing in life, love, and your career but you are full of spunk and brains and nothing can
-            stop you from achieving your dreams. Be like Dolly: remain confident and buy some hairspray. You got this.</p>
+                <h3>You are 1960s Dolly Parton!</h3>
+                
+                <p>You are just finding your footing in life, love, and your career but you are full of spunk and brains and nothing can
+                stop you from achieving your dreams. Be like Dolly: remain confident and buy some hairspray. You got this.</p>
 
             `;
             
@@ -113,9 +113,9 @@ $(document).ready(function() {
             // Displays the text within the stylized text container 
 
             const seventiesDollyResult = `
-            <h3>You are 1970s Dolly Parton!</h3>
-            
-            <p>You are a force to be reckoned with! You wrote “Jolene” and “I Will Always Love You” in the same day and are on a steady path towards even more success. Don’t forget to keep love in your heart, be true to yourself, and to be open to new opportunities.</p>
+                <h3>You are 1970s Dolly Parton!</h3>
+                
+                <p>You are a force to be reckoned with! You wrote “Jolene” and “I Will Always Love You” in the same day and are on a steady path towards even more success. Don’t forget to keep love in your heart, be true to yourself, and to be open to new opportunities.</p>
 
             `;
 
@@ -142,9 +142,9 @@ $(document).ready(function() {
             // Displays the text within the stylized text container 
 
             const eightiesDollyResult = `
-            <h3>You are 1980s Dolly Parton!</h3>
-            
-            <p>Your hair has never been bigger and neither have your dreams. Don’t be afraid to show people a new side of you just like Dolly did when she starred in a string of movies in the 1980s. But maybe don’t get a perm.</p>
+                <h3>You are 1980s Dolly Parton!</h3>
+                
+                <p>Your hair has never been bigger and neither have your dreams. Don’t be afraid to show people a new side of you just like Dolly did when she starred in a string of movies in the 1980s. But maybe don’t get a perm.</p>
             `;
 
             $(".text-container").html(eightiesDollyResult)
@@ -169,9 +169,9 @@ $(document).ready(function() {
 
             // Displays the text within the stylized text container 
             const presentDollyResult = `
-            <h3>You are present-day Dolly Parton!</h3>
-            
-            <p>You are full of wit and wisdom and are a pillar of strength and comfort for many. Bask in the glory of your successes but don’t be afraid to take on new projects when they arise.</p>
+                <h3>You are present-day Dolly Parton!</h3>
+                
+                <p>You are full of wit and wisdom and are a pillar of strength and comfort for many. Bask in the glory of your successes but don’t be afraid to take on new projects when they arise.</p>
             `;
 
             $(".text-container").html(presentDollyResult)

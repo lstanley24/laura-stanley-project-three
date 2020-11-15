@@ -1,3 +1,36 @@
+h3 {
+    font-family:'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 4rem;
+    padding: 50px 0 50px 0;
+}
+
+[type=radio] {
+    margin-right: 10px;
+}
+
+fieldset {
+    border: 0;
+}
+
+form .button {
+    font-family:'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+}
+
+.question-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.choice-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 #question-1, 
 #question-3 {
     background-color: white;
@@ -14,5 +47,116 @@
 .button-2,
 .button-3 {
     margin: 10px 0 10px 0;
+}
+
+// results styles. This section is added dynamically
+
+.answer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 50px 0 50px 0;
+}
+
+.right-column {
+    width: 70%; 
+    margin-left: 50px;
+}
+
+.text-container p {
+    font-family:'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 3rem;   
+}
+
+.image-container {
+    width: 30%;
+}
+
+// button that allows users to reset quiz. It displays when the quiz results are revealed. 
+
+.quiz-reset {
+    margin: 50px 0 50px 0;
+    display: none;
+}
+
+// Error Dolly :( This section only appears when the quiz taker doesn't answer one or more questions. 
+
+.error-dolly {
+    width: 50%;
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
+
+
+//mobile styles 
+
+@media (max-width: 940px) {
+    .image-container {
+        margin-left: 40px;
+    }
+
+    .right-column {
+        width: calc(70% - 40px);
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    #question-4 h3 {
+        width: 80%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    h3 {
+        font-size: 3rem;
+        text-align: center;
+    }    
+
+    .choice-container {
+        text-align: center;
+    }
+
+    form .button {
+        font-size: 2.5rem;
+    }
+
+    #question-1,
+    #question-2, 
+    #question-3,
+    #question-4 {
+        height: 80vh;
+    }
+
+    #question-4 .choice-container {
+        width: 75%;
+        
+    }
+
+    [type=submit] {
+        margin-top: 10px;
+    }
+
+    .answer-container {
+        display: block;
+    }
+
+    .image-container {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .right-column {
+        margin: 0 auto;
+
+    }
+
+    .text-container p {
+        font-size: 2.5rem;
+
+    }
 
 }

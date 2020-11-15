@@ -6,7 +6,7 @@
     <title>Which Dolly Are You?</title>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Rye&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ce85cdd91a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/sass/style.css">
 </head>
 <body>
     <!-- for screen readers -->
@@ -25,23 +25,22 @@
     <main>
         <section id="question-1"> 
             <div class="wrapper">
-                <form action="">
+                <form action="" id="dolly-quiz-1">
                     <fieldset>
-                        <!-- why does required only work for the last question?? -->
                         <div class="question-wrapper">
                             <h3>Your style could be described as:</h3>
                             <div class="choice-container">
                                 <div class="button-1">
-                                    <input type="radio" id="plain" name="fashion" value= 1 required>
+                                    <input type="radio" id="plain" name="fashion" value=1>
                                     <label for="plain"><span class="button">Plain and simple</span></label>
                                 </div>
                                 <div class="button-2">
-                                    <input type="radio" id="sequins" name="fashion" value= 2>
-                                    <label for="sequins"><span class="button">The more sequins the better!</span></label>
+                                    <input type="radio" id="sequins" name="fashion" value=2>
+                                    <label for="sequins"><span class="button">The more sequins the better</span></label>
                                 </div>
 
                                 <div class="button-3">
-                                    <input type="radio" id="denim" name="fashion" value= 3> 
+                                    <input type="radio" id="denim" name="fashion" value=3> 
                                     <label for="denim"><span class="button">Denim-heavy</span></label>
                                 </div>
                             
@@ -59,7 +58,7 @@
         <section id="question-2">
             <div class="wrapper">
 
-                <form action="">
+                <form action="" id="dolly-quiz-2">
                     <fieldset>
 
                         <div class="question-wrapper">
@@ -69,15 +68,15 @@
                             <div class="choice-container">
 
                                 <div class="button-1">
-                                    <input type="radio" id="country" name="genre" value= 2 required>
+                                    <input type="radio" id="country" name="genre" value=2>
                                     <label for="country"><span class="button">Country, duh</span></label>
                                 </div>
                                 <div class="button-2">
-                                    <input type="radio" id="pop" name="genre" value= 3>
+                                    <input type="radio" id="pop" name="genre" value=3>
                                     <label for="pop"><span class="button">Pop</span></label>
                                 </div>
                                 <div class="button-3">
-                                    <input type="radio" id="bluegrass" name="genre" value= 1>
+                                    <input type="radio" id="bluegrass" name="genre" value=1>
                                     <label for="bluegrass"><span class="button">Bluegrass</span></label>
                                 </div>
 
@@ -96,7 +95,7 @@
         </section>
         <section id="question-3">
             <div class="wrapper">
-                <form action="">
+                <form action="" id="dolly-quiz-3">
                     <fieldset>
                         <div class="question-wrapper">
 
@@ -105,19 +104,19 @@
                             <div class="choice-container">
 
                                 <div class="button-1">
-                                    <input type="radio" id="nine-five" name="movie" value= 2 required>
+                                    <input type="radio" id="nine-five" name="movie" value=2>
 
                                     <label for="nine-five"><span class="button">Nine to Five</span></label>
                                 </div>
                                 <div class="button-2">
-                                    <input type="radio" id="steel-magnolias" name="movie" value= 3>
+                                    <input type="radio" id="steel-magnolias" name="movie" value=3>
 
                                     <label for="steel-magnolias"><span class="button">Steel Magnolias</span></label>
 
                                 </div>
                                 <div class="button-3">
 
-                                    <input type="radio" id="coat-colors" name="movie" value= 1>
+                                    <input type="radio" id="coat-colors" name="movie" value=1>
 
                                     <label for="coat-colors"><span class="button">Dolly Parton's Coat of Many Colors</span></label>
                                 </div>
@@ -134,7 +133,7 @@
         </section> 
         <section id="question-4">
             <div class="wrapper">
-                <form action="">
+                <form action="" id="dolly-quiz-4">
                     <fieldset>
                         <div class="question-wrapper">
 
@@ -146,31 +145,31 @@
 
                                 <div class="button-1">
 
-                                    <input type="radio" id="high-hair" name="hair">
+                                    <input type="radio" id="high-hair1" name="hair">
                                     
-                                    <label for="high-hair"><span class="button">"The higher the hair, the closer to God!"</span></label>
+                                    <label for="high-hair1"><span class="button">"The higher the hair, the closer to God!"</span></label>
 
                                 </div>
                                 <div class="button-2">
 
-                                    <input type="radio" id="high-hair" name="hair">
+                                    <input type="radio" id="high-hair2" name="hair">
 
-                                    <label for="high-hair"><span class="button">"The higher the hair, the closer to God!"</span></label>
+                                    <label for="high-hair2"><span class="button">"The higher the hair, the closer to God!"</span></label>
 
                                 </div>
                                 <div class="button-3">
                                         
-                                    <input type="radio" id="high-hair" name="hair">
+                                    <input type="radio" id="high-hair3" name="hair">
 
-                                    <label for="high-hair"><span class="button">"The higher the hair, the closer to God!"</span></label>
+                                    <label for="high-hair3"><span class="button">"The higher the hair, the closer to God!"</span></label>
 
                                 </div>
                             </div>
 
                             <div class="submit-container">
-                                <input type="submit" value="Results!">
+                                <input type="submit" value="Results!" id="submit">
                                 
-                                <label for="submit" class="sr-only">Click here for quiz results!</label>
+                                <label for="submit" class="sr-only"><a href="#results">Click here for your quiz results!</a></label>
 
                             </div>
                         </div>
@@ -179,19 +178,43 @@
                 </form>
             </div>        
         </section>
-        <section class="results">
+        <section id="results">
             <div class="wrapper">
-
                 <div class="answer-container">
-
                     <!-- content to be added dynamically -->
+                    <div class="image-container">
+                        <!-- content to be added dynamically -->
+                    </div>
+                    <div class="right-column">
+
+                        <div class="text-container">
+                            <!-- content to be added dynamically -->
+                        </div>
+
+                        <!-- This is a button that, when clicked, will reset the quiz (form) and allow users to take it again -->
+                        <div class="quiz-reset">
+                        
+                            <a class="reset" href="#question-1">Take the quiz again!</a>
+                        
+                        </div>
+        
+                    </div>
 
                 </div>
+                <div class="error-dolly">
+                
+                    <!-- Content to be added dynamically -->
+                </div>
+                
             </div>
         </section>
-        
     </main>   
+    <footer>
+        <p><a href="http://junocollege.com/">Created at Juno College</a></p>
+    </footer>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
+

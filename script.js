@@ -18,12 +18,16 @@ $(document).ready(function() {
         const seventiesDolly = []
         const eightiesDolly = []
 
+        // Yo this is awesome! Took a quick look and right off the bat, a suggestion to clean it up would be to set up your If statement blocks as a function where you set the questionXSelection as a argument.And then you just have to call it three times, once for each answer!
+
         if (questionOneSelection === "1") {
             sixtiesDolly.push(questionOneSelection)
         } else if (questionOneSelection === "2") {
             seventiesDolly.push(questionOneSelection)
         } else if (questionOneSelection === "3") {
         eightiesDolly.push(questionOneSelection)
+        } else {
+            alert("Don't forget to choose an answer for question 1!")
         }
 
         if (questionTwoSelection === "1") {
@@ -32,6 +36,8 @@ $(document).ready(function() {
             seventiesDolly.push(questionTwoSelection)
         } else if (questionTwoSelection === "3") {
             eightiesDolly.push(questionTwoSelection)
+        } else {
+            alert("Don't forget to choose an answer for question 2!")
         }
 
         if (questionThreeSelection === "1") {
@@ -40,68 +46,142 @@ $(document).ready(function() {
             seventiesDolly.push(questionThreeSelection)
         } else if (questionThreeSelection === "3") {
             eightiesDolly.push(questionThreeSelection)  
+        } else {
+            alert("Don't forget to choose an answer for question 3!")
         }
-
-        // console.log(sixtiesDolly)
-        // console.log(seventiesDolly)
-        // console.log(eightiesDolly)
+ 
+        //  Display the determined era of Dolly Parton on the page.
 
         if (sixtiesDolly.length >= 2) {
-            console.log("SIXTIES!")
+           
+           // displays the text within the stylized text container 
+
+            const sixtiesDollyResult = `
+            <h3>You are 1960s Dolly Parton!</h3>
+            
+            <p>You are just finding your footing in life, love, and your career but you are full of spunk and brains and nothing can
+            stop you from achieving your dreams. Be like Dolly: remain confident and buy some hairspray. You got this.</p>
+
+            `;
+            
+            $(".text-container").html(sixtiesDollyResult)
+            
+            // Reveals the quiz reset button that is otherwise hidden as per css "display:none"
+            
+            $(".quiz-reset").show();
+           
+            // displays the image within the stylized image container
+
+            const sixtiesDollyResultImg = ` 
+                <figure> 
+                    <img src = "./assets/dollyParton60s.jpg" alt = "Dolly Parton in the 1960s. She sits on the front stoop of a house and wears yellow pants and a green tanktop."> 
+                </figure>
+            `;
+
+            $(".image-container").html(sixtiesDollyResultImg);
+
+          
+
         
         } else if (seventiesDolly.length >= 2) {
-            console.log("SEVENTIES")
-        } else if (eightiesDolly.length >= 2 ){
-            console.log("EIGHTIES")
-        } else {
-            console.log("PRESENT DAY DOLLY")
 
+            const seventiesDollyResult = `
+            <h3>You are 1970s Dolly Parton!</h3>
+            
+            <p>You are a force to be reckoned with! You wrote “Jolene” and “I Will Always Love You” in the same day and are on a steady path towards even more success. Don’t forget to keep love in your heart, be true to yourself, and to be open to new opportunities.</p>
+
+            `;
+
+            $(".text-container").html(seventiesDollyResult)
+
+
+            $('.quiz-reset').show();
+
+            const seventiesDollyResultImg = ` 
+                <figure> 
+                    <img src = "./assets/dollyParton70s.jpg" alt = "Dolly Parton in the 1970s. She leans against a wooden fence and wears a red plaid shirt and blue jeans. Her hair is big and blonde."> 
+                </figure>
+            `;
+
+            $(".image-container").html(seventiesDollyResultImg)
+
+        } else if (eightiesDolly.length >= 2 ){
+            const eightiesDollyResult = `
+            <h3>You are 1980s Dolly Parton!</h3>
+            
+            <p>Your hair has never been bigger and neither have your dreams. Don’t be afraid to show people a new side of you just like Dolly did when she starred in a string of movies in the 1980s. But maybe don’t get a perm.</p>
+            `;
+
+            $(".text-container").html(eightiesDollyResult)
+
+            $('.quiz-reset').show();
+
+            const eightiesDollyResultImg = ` 
+                <figure> 
+                    <img src = "./assets/dollyParton80s.jpg" alt = "Dolly Parton in the 1980s. She wears a white lace top, a black leather jacket, red lipstick, and blue eyeshadow. The backdrop is red. Her hair is big, blonde, and curly, likely permed, and takes up the majority of the photo."> 
+                </figure>
+            `;
+
+            $(".image-container").html(eightiesDollyResultImg)
+
+            // Further error proofing. If no selections are made, the text and image containers with the answers are hidden and the errorDolly container arrives
+
+        } else if  (sixtiesDolly || seventiesDolly || eightiesDolly === undefined) {
+            $(".text-container").hide();
+            $(".image-container").hide();
+            $("a.reset").hide();
+
+            const errorDolly = ` 
+                <h3> Maybe try filling out all of the answers next time </h3>
+                <figure> 
+                    <img src = "./assets/dollyPartonError.gif" alt = "A GIF of Dolly Parton wearing a black turtleneck sweater and chunky silver bracelets, earrings, and a necklace. She takes a sip from a white tea cup, while holding its matching saucer, and winks at the camera."> 
+                </figure>
+            `;
+
+            $(".error-dolly").html(errorDolly)
+
+        }  else {
+
+            const presentDollyResult = `
+            <h3>You are present-day Dolly Parton!</h3>
+            
+            <p>You are full of wit and wisdom and are a pillar of strength and comfort for many. Bask in the glory of your successes but don’t be afraid to take on new projects when they arise.</p>
+            `;
+
+            $(".text-container").html(presentDollyResult)
+
+            $(".quiz-reset").show();
+
+            const presentDollyResultImg = ` 
+                <figure> 
+                    <img src = "./assets/dollyPartonPresent.jpg" alt = "Dolly Parton performing on stage in 2014. She wears a bedazzled white outfit, pink lipstick, and blue eyeshadow."> 
+                </figure>
+            `;
+
+            $(".image-container").html(presentDollyResultImg)
+            
         }
 
+        // scrolls users to the results container
 
-        // Create an array that stores the value of all of user's choices. 
+        $("html").animate({
+            scrollTop: $("#results").offset().top
+        }, "slow");
+    
+        // once the "take the quiz again" button is clicked, the page reloads and users are scrolled back up to question 1. 
 
-        // const userSelections = []
+        $("a.reset").on("click", function () {
+            location.reload();
 
-        // userSelections.push(questionOneSelection)
-        // userSelections.push(questionTwoSelection)
-        // userSelections.push(questionThreeSelection)
+            // My HTML is set up so that each section of my quiz is a new form so I have to reset each new form (aka each section) separately. This code isn't very DRY though, so I can't help but think there's a cleaner way to do this. 
 
-        // console.log(userSelections)
+            $("#dolly-quiz-1").trigger("reset");
+            $("#dolly-quiz-2").trigger("reset");
+            $("#dolly-quiz-3").trigger("reset");
+            $("#dolly-quiz-4").trigger("reset");
 
-
-        // // loop through the user's choice array. 
-
-        // answerTotal = 0
-
-        // for (let i = 0; i < userSelections.length; i++) {
-        //     answerTotal = (answerTotal + userSelections[i])
-        //     answerTotal / userSelections.length
-
-        //     console.log(answerTotal)
-        // }
-
-        // userSelections.forEach ((responses) => {
-        
-        //     if (userSelections.includes("one-point")) {
-        //         console.log("yay, one point")
-        //     } else if (userSelections.includes("two-point")) {
-        //         console.log("yay, two point!")
-        //     } else if  (userSelections.includes("three-point")) {
-        //         console.log("yay, three point!")
-        //     } else {
-        //         console.log ("Yay, another dolly!")
-
-        //     }
-        //     console.log(responses)
-        // });
-          
-        
-        // use a whole bunch of conditionals that state: If the majority of the user's selections are "one-point": The result is "60s Dolly". If the majority is "two-point": "70s Dolly". If the majority "three-point": "80s Dolly". Else, their result is "Present-day Dolly"
-
-        // Display the determined era of Dolly Parton on the page.
-
-       
+        });
+     
 
     });
 

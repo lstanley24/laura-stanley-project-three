@@ -240,16 +240,31 @@ form .button {
 
 @media (max-width: 480px) {
 
+
     .image-wrapper {
         max-width: 80%;
 
     }
 
-  .image-wrapper img, .error-dolly img {
-    width: 100%;
+    .image-wrapper img, .error-dolly img {
+        width: 100%;
 
-  }
+    }
 
-  
+    .answer-container {
+        margin: 25px;
+
+    }
+
+    .error-dolly {
+        margin: 0 25px;
+
+    }
+
+    .quiz-reset {
+        margin: 25px;
+
+    }
+
 
 }

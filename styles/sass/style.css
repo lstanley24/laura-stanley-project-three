@@ -637,6 +637,15 @@ form .button {
   .image-wrapper img, .error-dolly img {
     width: 100%;
   }
+  .answer-container {
+    margin: 25px;
+  }
+  .error-dolly {
+    margin: 0 25px;
+  }
+  .quiz-reset {
+    margin: 25px;
+  }
 }
 
 footer {

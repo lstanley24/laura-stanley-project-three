@@ -15,7 +15,7 @@ $font-colour: #000000;
 
 html {
     font-size: 62.5%;
-    scroll-behavior: smooth
+    scroll-behavior: smooth;
 }
 
 ul {
@@ -66,9 +66,8 @@ figure {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 150px;
-
 }
+
 .nav-button-container a,
 [type=submit],
 .quiz-reset a {
@@ -77,9 +76,10 @@ figure {
     font-size: 3rem;
     text-align: center;
     display: inline-block;
-    border-radius: 5%;
+    border-radius: 5px;
     padding: 30px;
     background-color: $button-colour-primary;
+    box-shadow: 5px 5px 3px black;
 }
 
 .nav-button-container a:hover,
@@ -90,6 +90,23 @@ figure {
 .quiz-reset a:focus {
     background-color: $button-colour-secondary;
     color: $secondary-colour;
+}
+
+.nav-button-container a:active,
+[type=submit]:active,
+.quiz-reset a:active {
+    transform: translate(3px, 2px);
+    box-shadow: 1px 1px 0px black;
+}
+
+
+
+[type=radio] {
+    transform: scale(2);
+    margin-right: 20px;
+    // color: grey;
+
+
 }
 
 // Responsive styles

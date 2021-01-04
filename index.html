@@ -6,6 +6,8 @@
     <title>Which Dolly Are You?</title>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Rye&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ce85cdd91a.js" crossorigin="anonymous"></script>
+    <link type="image/png" href="./assets/guitar.png" rel="icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="styles/sass/style.css">
 </head>
 <body>
@@ -13,12 +15,12 @@
     <a href="#question-1" class="skip-link">Skip to the first question.</a>
     <header>
         <div class="wrapper">
-            <h1 class="greeting">Howdy, y'all!<i class="fas fa-hat-cowboy"></i></h1>
+            <h1 class="greeting">Howdy, y'all!<i class="fas fa-hat-cowboy animate__animated animate__swing animate__slower"></i></h1>
             
             <h2>Complete the quiz below to find out which era of Dolly Parton you are!</h2>
 
             <div class="nav-button-container">
-                <a href="#question-1">Yee-haw!</a>
+                <a href="#question-1">Yee-haw</a>
             </div>
         </div>
     </header>
@@ -26,32 +28,41 @@
         <!-- question 1  -->
         <section id="question-1"> 
             <div class="wrapper">
-                <form action="" id="dolly-quiz-1">
-                    <fieldset>
-                        <div class="question-wrapper">
-                            <h3>Your style could be described as:</h3>
-                            <div class="choice-container">
-                                <div class="button-1">
-                                    <input type="radio" id="plain" name="fashion" value=1>
-                                    <label for="plain"><span class="button">Plain and simple</span></label>
-                                </div>
-                                <div class="button-2">
-                                    <input type="radio" id="sequins" name="fashion" value=3>
-                                    <label for="sequins"><span class="button">The more sequins the better</span></label>
-                                </div>
-
-                                <div class="button-3">
-                                    <input type="radio" id="denim" name="fashion" value=2> 
-                                    <label for="denim"><span class="button">Denim-heavy</span></label>
-                                </div>
+                <div class="question-container">
+                    <form action="" id="dolly-quiz-1">
+                        <fieldset>
+                            <div class="question-wrapper">
+                                <h3>Your style could be described as:</h3>
                             
-                            </div>
-                        </div>
-                    </fieldset>
-                </form>
-                <div class="nav-button-container">
+                                <div class="button-1">
+                                    <label for="plain" class="radio-button"> 
+                                        <input type="radio" id="plain" name="fashion" value=1><span class="button">Plain and simple</span>
+                                    </label>
+                                </div>
 
-                    <a href="#question-2">Next!</a>
+                                <div class="button-2">
+                                    <label for="sequins" class="radio-button">
+                                        <input type="radio" id="sequins" name="fashion" value=3><span class="button">The more sequins the better</span>
+                                    </label>
+                                </div>
+                                <div class="button-3">
+                                    <label for="denim" class="radio-button">
+                                        <input type="radio" id="denim" name="fashion" value=2><span class="button">Denim-heavy</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <div class="image-wrapper">
+                        <figure>
+                            <img src="./assets/denim-jacket.png" alt="A blue cartoon jean jacket">
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="nav-button-container">
+                   
+                    <span class="next"><a href="#question-2">Next!</a></span>
 
                 </div>
             </div>
@@ -59,15 +70,14 @@
         <!-- question 2 -->
         <section id="question-2">
             <div class="wrapper">
+                <div class=question-container>
 
-                <form action="" id="dolly-quiz-2">
-                    <fieldset>
+                    <form action="">
+                        <fieldset>
 
-                        <div class="question-wrapper">
+                            <div class="question-wrapper">
 
-                            <h3>Choose a genre of music:</h3>
-
-                            <div class="choice-container">
+                                <h3>Choose a genre of music:</h3>
 
                                 <div class="button-1">
                                     <input type="radio" id="country" name="genre" value=2>
@@ -84,13 +94,17 @@
 
                             </div>
 
-                        </div>
-
-                    </fieldset>
-                </form>
+                        </fieldset>
+                    </form>
+                    <div class="image-wrapper">
+                        <figure>
+                            <img src="./assets/microphone.png" alt="A blue and grey cartoon microphone and music note and a golden cartoon star">
+                        </figure>
+                    </div>
+                </div>
                 <div class="nav-button-container">
                 
-                    <a href="#question-3">Next!</a>
+                    <span class="next"><a href="#question-3">Next!</a></span>
                 
                 </div>
             </div>
@@ -98,13 +112,12 @@
         <!-- question 3 -->
         <section id="question-3">
             <div class="wrapper">
-                <form action="" id="dolly-quiz-3">
-                    <fieldset>
-                        <div class="question-wrapper">
+                <div class="question-container">
+                    <form action="">
+                        <fieldset>
+                            <div class="question-wrapper">
 
-                            <h3>Choose a movie:</h3>
-
-                            <div class="choice-container">
+                                <h3>Choose a movie:</h3>
 
                                 <div class="button-1">
                                     <input type="radio" id="nine-five" name="movie" value=2>
@@ -119,12 +132,19 @@
                                     <label for="coat-colors"><span class="button">Dolly Parton's Coat of Many Colors</span></label>
                                 </div>
                             </div>
-                        </div>
-                    </fieldset>
-                </form>
+                        </fieldset>
+                    </form>
+                    <div class="image-wrapper">
+                        <figure>
+                            <img src="./assets/popcorn.png" alt="a cartoon red and white striped bag of popcorn and a blue and white portable drink cup with a straw">
+                        </figure>
+
+                    </div>
+
+                </div>
                 <div class="nav-button-container">
     
-                    <a href="#question-4">Next!</a>
+                    <span class="next"><a href="#question-4">Next!</a></span>
                 
                 </div>
             </div>
@@ -132,13 +152,12 @@
         <!-- question 4. THis question is just for fun and has no valued meaning -->
         <section id="question-4">
             <div class="wrapper">
-                <form action="" id="dolly-quiz-4">
-                    <fieldset>
-                        <div class="question-wrapper">
+                <div class="question-container">
+                    <form action="">
+                        <fieldset>
+                            <div class="question-wrapper">
 
-                            <h3>When it comes to your hair, your motto is:</h3>
-
-                            <div class="choice-container">
+                                <h3>When it comes to your hair, your motto is:</h3>
 
                                 <div class="button-1">
                                     <input type="radio" id="high-hair1" name="hair">
@@ -152,19 +171,24 @@
                                     <input type="radio" id="high-hair3" name="hair">
                                     <label for="high-hair3"><span class="button">"The higher the hair, the closer to God!"</span></label>
                                 </div>
+              
                             </div>
-                            <div class="submit-container">
-
-                                <input type="submit" value="Results!" id="submit">
-                                <label for="submit" class="sr-only"><a href="#results">Click here for your quiz results!</a></label>
-
-                            </div>
+                        </fieldset>   
+                        <div class="submit-container">
+                        
+                            <input type="submit" value="Results!" id="submit">
+                            <label for="submit" class="sr-only">Click here for your quiz results!</label>
+                        
                         </div>
-                    </fieldset>     
-                </form>
-            </div>        
+                    </form>
+                    <div class="image-wrapper">
+                        <figure>
+                            <img src="./assets/dolly-hair.gif" class="sparkle-dolly" alt="Dolly Parton wears a pink jumpsuit and her tall blonde hair shimmers.">
+                        </figure>
+                    </div>
+                </div>
+            </div>  
         </section>
-        <!-- Quiz results section -->
         <section id="results">
             <div class="wrapper">
                 <div class="answer-container">
@@ -177,16 +201,19 @@
                             <!-- content to be added dynamically -->
                         </div>
                         <!-- This is a button that, when clicked, will reset the quiz (form) and allow users to take it again -->
-                        <div class="quiz-reset">
-                            <a class="reset" href="#question-1">Take the quiz again!</a>
-                        </div>
+                 
                     </div>
                 </div>
                 <div class="error-dolly">
                     <!-- Content to be added dynamically -->
+                 
+                </div>
+                <div class="quiz-reset">
+                    <a class="reset" href="#question-1">Take the quiz again!</a>
                 </div>
             </div>
         </section>
+        <!-- Quiz results section -->
     </main>   
     <footer>
         <p><a href="http://junocollege.com/">Created at Juno College</a></p>
@@ -195,6 +222,7 @@
     <!-- JQuery library + link to JavaScript file    -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.statically.io/gh/kswedberg/jquery-smooth-scroll/3948290d/jquery.smooth-scroll.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

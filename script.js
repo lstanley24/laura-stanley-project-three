@@ -1,20 +1,14 @@
 // Document ready !
 
-$(document).ready(function() {
-    
+$(document).ready(function () {
+
     // Set up an event listener on the form's submit button which, once clicked (aka a submit event), it will set off a series of instructions. 
 
-    $("form").on("submit", function(event) {
+    $("form").on("submit", function (event) {
 
         // prevent default so the page doesn't reload automatically when the form is submitted 
 
         event.preventDefault();
-
-        // store the value of the user's choices in variables. In HTML, each radio button is assigned a different value: "1", "2", "3". 
-
-        const questionOneSelection = $("input[name=fashion]:checked").val();
-        const questionTwoSelection = $("input[name=genre]:checked").val();
-        const questionThreeSelection = $("input[name=movie]:checked").val();
 
         // Three empty arrays that will store the value of the question selections
 
@@ -22,80 +16,61 @@ $(document).ready(function() {
         const seventiesDolly = []
         const eightiesDolly = []
 
-        // Conditional statements that push the assigned values into the designated Dolly arrays. This is repetitive, dear reader, but I wasn't too sure how to clean it up. Maybe make it into a function that I call three times? 
+        const questionSelection = [
+            $("input[name=fashion]:checked").val(),
+            $("input[name=genre]:checked").val(),
+            $("input[name=movie]:checked").val()
+        ]
 
-        if (questionOneSelection === "1") {
-            sixtiesDolly.push(questionOneSelection)
-        } else if (questionOneSelection === "2") {
-            seventiesDolly.push(questionOneSelection)
-        } else if (questionOneSelection === "3") {
-            eightiesDolly.push(questionOneSelection)
-        } else {
-            // Alert is set off when a value is not selected
-            alert("Don't forget to choose an answer for question 1!")
-        }
+        for (let i = 0; i < 3; i++) {
 
-        if (questionTwoSelection === "1") {
-            sixtiesDolly.push(questionTwoSelection)           
-        } else if (questionTwoSelection === "2") {
-            seventiesDolly.push(questionTwoSelection)
-        } else if (questionTwoSelection === "3") {
-            eightiesDolly.push(questionTwoSelection)
-        } else {
-            alert("Don't forget to choose an answer for question 2!")
-        }
-
-        if (questionThreeSelection === "1") {
-            sixtiesDolly.push(questionThreeSelection)
-        } else if (questionThreeSelection === "2") {
-            seventiesDolly.push(questionThreeSelection)
-        } else if (questionThreeSelection === "3") {
-            eightiesDolly.push(questionThreeSelection)  
-        } else {
-            alert("Don't forget to choose an answer for question 3!")
-        }
- 
-        //  Display the determined era of Dolly Parton on the page.
-
-        if (questionOneSelection === undefined || questionTwoSelection === undefined || questionThreeSelection === undefined) {
-
-            // Error proofing. If no selections are made, the text and image containers with the answers are hidden and the errorDolly container arrives
-
-            $(".text-container").hide();
-            $(".image-container").hide();
-            $("a.reset").hide();
-
-            // Error Dolly container 
-
-            const errorDolly = ` 
-                <h3> Maybe try filling out all of the answers next time </h3>
-                <figure> 
-                    <img src = "./assets/dollyPartonError.gif" alt = "A GIF of Dolly Parton wearing a black turtleneck sweater and chunky silver bracelets, earrings, and a necklace. She takes a sip from a white tea cup, while holding its matching saucer, and winks at the camera."> 
-                </figure>
-            `;
-
-            $(".error-dolly").html(errorDolly)  
-
+            if (questionSelection[i] === "1") {
+                sixtiesDolly.push(questionSelection[i])
+            } else if (questionSelection[i] === "2") {
+                seventiesDolly.push(questionSelection[i])
+            } else if (questionSelection[i] === "3") {
+                eightiesDolly.push(questionSelection[i])
+            } else {
+                    
+                // Error proofing. If no selections are made, the text and image containers with the answers are hidden and the errorDolly container arrives
+    
+                $(".text-container").hide();
+                $(".image-container").hide();
             
-        } else if (sixtiesDolly.length >= 2) {
+                // Error Dolly container 
+    
+                const errorDolly = ` 
+                    <h3> Maybe try filling out all of the answers next time </h3>
+                    <figure> 
+                        <img src = "./assets/dollyPartonError.gif" alt = "A GIF of Dolly Parton wearing a black turtleneck sweater and chunky silver bracelets, earrings, and a necklace. She takes a sip from a white tea cup, while holding its matching saucer, and winks at the camera."> 
+                    </figure>
+                `;
+    
+                $(".error-dolly").html(errorDolly)
+                $(".error-dolly").css("display", "flex");
+                $(".quiz-reset").show();
+               
+            }       
+        }
+
+         if (sixtiesDolly.length >= 2) {
             // 1960s Dolly answer
-           
-           // Displays the text within the stylized text container 
+
+            // Displays the text within the stylized text container 
 
             const sixtiesDollyResult = `
                 <h3>You are 1960s Dolly Parton!</h3>
                 
                 <p>You are just finding your footing in life, love, and your career but you are full of spunk and brains and nothing can
                 stop you from achieving your dreams. Be like Dolly: remain confident and buy some hairspray. You got this.</p>
-
             `;
-            
+
             $(".text-container").html(sixtiesDollyResult)
-            
+       
             // Reveals the quiz reset button that is otherwise hidden as per css "display:none"
-            
+
             $(".quiz-reset").show();
-           
+
             // displays the image within the stylized image container
 
             const sixtiesDollyResultImg = ` 
@@ -106,7 +81,9 @@ $(document).ready(function() {
 
             $(".image-container").html(sixtiesDollyResultImg);
 
-            
+            $(".answer-container").css("display", "flex");
+
+
         } else if (seventiesDolly.length >= 2) {
             // 1970s Dolly answer 
 
@@ -116,7 +93,6 @@ $(document).ready(function() {
                 <h3>You are 1970s Dolly Parton!</h3>
                 
                 <p>You are a force to be reckoned with! You wrote “Jolene” and “I Will Always Love You” in the same day and are on a steady path towards even more success. Don’t forget to keep love in your heart, be true to yourself, and to be open to new opportunities.</p>
-
             `;
 
             $(".text-container").html(seventiesDollyResult)
@@ -135,8 +111,10 @@ $(document).ready(function() {
 
             $(".image-container").html(seventiesDollyResultImg)
 
-            
-        } else if (eightiesDolly.length >= 2 ){
+            $(".answer-container").css("display", "flex");
+
+
+        } else if (eightiesDolly.length >= 2) {
             //1980s Dolly answer
 
             // Displays the text within the stylized text container 
@@ -163,7 +141,10 @@ $(document).ready(function() {
 
             $(".image-container").html(eightiesDollyResultImg)
 
-        }  else {
+
+            $(".answer-container").css("display", "flex");
+
+        } else {
 
             // If the user selects "1" "2" and "3", the result is Present Day Dolly.    
 
@@ -188,7 +169,9 @@ $(document).ready(function() {
 
             // displays the image within the stylized image container
 
-            $(".image-container").html(presentDollyResultImg)   
+            $(".image-container").html(presentDollyResultImg)
+
+            $(".answer-container").css("display", "flex");
         }
 
         // scrolls users to the results container
@@ -196,7 +179,7 @@ $(document).ready(function() {
         $("html").animate({
             scrollTop: $("#results").offset().top
         }, "slow");
-    
+
         // once the "take the quiz again" button is clicked, the page reloads and users are scrolled back up to question 1. 
 
         $("a.reset").on("click", function () {
@@ -204,10 +187,9 @@ $(document).ready(function() {
 
             // My HTML is set up so that each section of my quiz is a new form so I have to reset each new form (aka each section) separately. This code isn't very DRY though, so I can't help but think there's a cleaner way to do this. 
 
-            $("#dolly-quiz-1").trigger("reset");
-            $("#dolly-quiz-2").trigger("reset");
-            $("#dolly-quiz-3").trigger("reset");
-            $("#dolly-quiz-4").trigger("reset");
+            $("form").trigger("reset");
+
         });
     });
 });
+
